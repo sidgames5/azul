@@ -44,6 +44,7 @@ export default function App() {
         <div className="w-3/5 h-full flex flex-col items-center justify-center align-middle">
             {/* Calendar */}
             <div className="bg-zinc-700 w-[95%] h-[95%] rounded-lg">
+                {/* TODO: implement calendars */}
             </div>
         </div>
     </main>;
