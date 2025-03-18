@@ -34,7 +34,7 @@ export default function App() {
                     </div>
                     <div className="flex flex-col w-full gap-4">
                         <TaskCard task={new Task("Develop the app", "something", new Date("2025-03-17"), new Date("2025-03-18"), 2, 1, null)} />
-                        <TaskCard task={new Task("Finish developing the app", "something", new Date("2025-03-17"), new Date("2025-03-18"), 2, 1, null)} />
+                        <TaskCard task={new Task("Finish developing the app", "something", new Date("2025-03-17"), new Date("2025-03-18"), 3, 1, null)} />
                     </div>
                 </div>
                 <div className="flex flex-col items-center w-full h-fit border-b-2 border-white p-4">
