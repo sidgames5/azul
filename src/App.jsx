@@ -2,8 +2,20 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TaskCard from "./components/TaskCard";
 import Task from "./models/Task";
+import { useEffect, useState } from "react";
 
 export default function App() {
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        // load the tasks from caldav
+
+        // TODO: replace this with data from like a settings menu
+        const calDavUrl = "https://example.com/dav";
+
+
+    }, []);
+
     return <main className="flex w-screen h-screen bg-gray-800">
         <div className="w-[20%] h-full border-white border-r-2 flex flex-col items-center justify-center align-middle">
             {/* Sidebar */}
