@@ -71,14 +71,6 @@ export default function App() {
                         <TaskCard task={new Task("Finish developing the app", "something", new Date("2025-03-17"), new Date("2025-03-18"), 3, 1, null)} />
                     </div>
                 </div>
-                <div className="flex flex-col items-center w-full h-fit border-b-2 border-white p-4">
-                    <div className="w-full flex flex-row items-center justify-between">
-                        <h1 className="text-left self-start text-lg font-bold">Done</h1>
-                        <FontAwesomeIcon icon={faCaretDown} className="cursor-pointer" onClick={() => {
-                            // TODO: collapse/expand div
-                        }} />
-                    </div>
-                </div>
             </div>
         </div>
         <div className="w-[50%] h-full flex flex-col items-center justify-center align-middle">
