@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TaskCard from "./components/TaskCard";
 import Task from "./models/Task";
 import { useEffect, useState } from "react";
-import env from "dotenv";
 import * as dav from "dav";
 
 export default function App() {
@@ -13,28 +12,28 @@ export default function App() {
         async function loadFromDav() {
             // load the tasks from caldav
 
-        // TODO: replace this with data from like a settings menu
-        const calDavUrl = env.DAV_URL;
+            // TODO: replace this with data from like a settings menu
+            const calDavUrl = process.env.REACT_APP_DAV_URL;
 
-        const credentials = new dav.Credentials({
-            username: env.DAV_USERNAME,
-            password: env.DAV_PASSWORD
-        });
-
-        const client = new dav.Client(new dav.transport.Basic(credentials));
-        
-        try {
-            const account = await dav.createAccount({
-              server: calDavUrl,
-              xhr: new dav.transport.Basic(credentials),
-              accountType: 'caldav',
+            const credentials = new dav.Credentials({
+                username: process.env.REACT_APP_DAV_USERNAME,
+                password: process.env.REACT_APP_DAV_PASSWORD
             });
 
-            const calendars = account.calendars;
-            console.log('Lists:', calendars);
-          } catch (error) {
-            console.error('Error fetching lists:', error);
-          }
+            const client = new dav.Client(new dav.transport.Basic(credentials));
+
+            try {
+                const account = await dav.createAccount({
+                    server: calDavUrl,
+                    xhr: new dav.transport.Basic(credentials),
+                    accountType: 'caldav',
+                });
+
+                const calendars = account.calendars;
+                console.log('Lists:', calendars);
+            } catch (error) {
+                console.error('Error fetching lists:', error);
+            }
         }
         loadFromDav();
     }, []);
