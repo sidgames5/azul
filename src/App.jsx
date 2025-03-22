@@ -13,8 +13,7 @@ export default function App() {
             // load the tasks from caldav
 
             // TODO: replace this with data from like a settings menu
-            const calDavUrl = "https://corsproxy.io/?url=" + process.env.REACT_APP_DAV_URL;
-            console.log(calDavUrl);
+            const calDavUrl = "http://localhost:3001/caldav"; // proxy middleware stuff
 
             const credentials = new dav.Credentials({
                 username: process.env.REACT_APP_DAV_USERNAME,
